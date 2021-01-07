@@ -1,0 +1,14 @@
+[package]
+name = "melatonin"
+version = "0.1.0"
+authors = ["Starz0r"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+native-windows-gui = {version = "1.0.7", features = ["all"]}
+native-windows-derive = "1.0.2"
+eyre = "0.6.2"
+hook = { git = "https://github.com/kdar/wininject-rs", rev = "7bb5926b220147b202cb110f1ee188ec48bacaf1" }
+sysinfo = "0.15.4"
