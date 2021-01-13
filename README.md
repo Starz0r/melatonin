@@ -7,3 +7,4 @@ NOTICE: Microsoft Windows only.
 
 ![Picture of the user interface](./assets/interface.png)
 
+Special Thanks to [LunarLambda](https://github.com/LunarLambda) for writing the injection code that powers this application!
