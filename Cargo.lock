@@ -89,6 +89,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "djin"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d1a7c18c83b124e43bb7c0c41bcd980ce802656b577908fbcfd7b44fa728ea6e"
+dependencies = [
+ "winapi",
+]
+
+[[package]]
 name = "doc-comment"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -147,12 +156,12 @@ checksum = "7fc7aa29613bd6a620df431842069224d8bc9011086b1db4c0e0cd47fa03ec9a"
 name = "melatonin"
 version = "0.1.0"
 dependencies = [
+ "djin",
  "eyre",
  "native-windows-derive",
  "native-windows-gui",
  "sysinfo",
  "winapi",
- "winject",
 ]
 
 [[package]]
@@ -333,10 +342,3 @@ name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
-
-[[package]]
-name = "winject"
-version = "0.1.0"
-dependencies = [
- "winapi",
-]

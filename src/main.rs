@@ -6,6 +6,7 @@ use std::os::windows::io::RawHandle;
 use std::path::Path;
 use std::ptr::null_mut as NULL;
 
+use djin::{inject_dll, open_process};
 use nwd::NwgUi;
 use nwg::NativeUi;
 use sysinfo::{ProcessExt, System, SystemExt};
@@ -19,7 +20,6 @@ use winapi::{
         },
     },
 };
-use winject::inject_dll;
 
 #[derive(Default, NwgUi)]
 pub struct App {
@@ -62,9 +62,19 @@ impl App {
         }
 
         if hwnd != NULL() {
-            inject_dll(hwnd);
+            let err = inject_dll(hwnd.cast(), ".\\SleepMargin32.dll", b"my_library_init");
+            match err {
+                Ok(_) => nwg::simple_message(
+                    "Injection Status",
+                    "Injection was successful! Sleep margin was set to 1.",
+                ),
+                Err(code) => nwg::error_message(
+                    "Injection Status",
+                    format!("Injection failed! Error code: {}", code).as_str(),
+                ),
+            };
         } else {
-            println!("Something happened.");
+            nwg::error_message("Process not found", "The target process could not be used or found due to the current permission level.");
         }
     }
 }

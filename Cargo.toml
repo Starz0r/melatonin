@@ -10,6 +10,6 @@ edition = "2018"
 native-windows-gui = {version = "1.0.7", features = ["all"]}
 native-windows-derive = "1.0.2"
 eyre = "0.6.2"
-winject = { path = "C:\\Users\\Starz0r\\Development\\winject" } 
+djin = "0.1.1"
 sysinfo = "0.15.4"
 winapi = { version = "0.3.9", features = ["processthreadsapi", "winnt"] }
