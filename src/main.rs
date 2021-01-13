@@ -88,6 +88,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // get system information
     let sys = System::new_all();
 
+    // notify user
+    nwg::simple_message("Notice", "This application is used to inject a DLL into a running process remotely. It is most recommended that you only use this when there aren't any active process running an anti-cheat in the background, as it might get you banned. Please use this application responibly.");
+
     // enumerate all currently running processes
     for (pid, process) in sys.get_processes() {
         app.process_combobox
